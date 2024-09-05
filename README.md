@@ -9,7 +9,8 @@ Buttons & Controls: Simple buttons for uploading, analyzing, and resetting data.
 Progress Bars: Visualize attention levels dynamically with real-time updates.
 
 ## Tech Stack
-Languages: TypeScript, Python
+Languages: TypeScript, Python.
+
 Libraries and Frameworks: React, Vite, TailwindCSS, Numpy, Pandas, Matplotlib, Seaborn, Pickle
 Component : Shadcn/ui
 
