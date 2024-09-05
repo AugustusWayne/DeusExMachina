@@ -1,50 +1,37 @@
-# React + TypeScript + Vite
+# EEG Attention Detection Website
+This project is a web-based platform that processes EEG data to identify levels of attention. Built with Vite, React, TypeScript, and Shadcn/UI components, the app offers a smooth, responsive UI for analyzing brainwave patterns.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features
+EEG Data Input: Upload EEG data for real-time attention detection.
+Attention Visualization: See the attention levels through progress bars and interactive UI components.
+Tabs Interface: Navigate between multiple EEG readings or feature settings using tabbed navigation.
+Buttons & Controls: Simple buttons for uploading, analyzing, and resetting data.
+Progress Bars: Visualize attention levels dynamically with real-time updates.
+Tech Stack
+Frontend: Vite + React + TypeScript
+UI Components: Shadcn/UI for tabs, buttons, and progress bars
+Charting: [Add any additional libraries if used, e.g., Chart.js, D3.js, etc.]
+Installation
+Clone the repository:
 
-Currently, two official plugins are available:
+bash
+Copy code
+git clone https://github.com/your-username/eeg-attention-detection.git
+cd eeg-attention-detection
+Install dependencies:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+bash
+Copy code
+npm install
+Run the development server:
 
-## Expanding the ESLint configuration
+bash
+Copy code
+npm run dev
+Open your browser and navigate to http://localhost:3000.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+Usage
+Upload an EEG data file using the provided interface.
+Navigate through the tabs to view the results and attention analysis.
+Visualize attention levels in real-time using the progress bars.
 ```
