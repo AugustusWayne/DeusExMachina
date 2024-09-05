@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EEG Attention Classification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        #confusionMatrix {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>EEG Attention Classification</h1>
+    <input type="file" id="csvFile" accept=".csv">
+    <button onclick="uploadFile()">Analyze EEG Data</button>
+    <div id="result">
+        <h2>Results</h2>
+        <h3>Accuracy</h3>
+        <p id="accuracy"></p>
+        <h3>Classification Report</h3>
+        <pre id="classificationReport"></pre>
+        <h3>Confusion Matrix</h3>
+        <img id="confusionMatrix" alt="Confusion Matrix">
+    </div>
+
+    <script>
+        function uploadFile() {
+            const fileInput = document.getElementById('csvFile');
+            const file = fileInput.files[0];
+            const formData = new FormData();
+            formData.append('file', file);
+
+            fetch('http://localhost:5000/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.accuracy) {
+                    document.getElementById('accuracy').textContent = `${(data.accuracy * 100).toFixed(2)}%`;
+                    document.getElementById('classificationReport').textContent = data.classification_report;
+                    document.getElementById('confusionMatrix').src = 'data:image/png;base64,' + data.confusion_matrix;
+                    document.getElementById('result').style.display = 'block';
+                } else if (data.error) {
+                    alert('Error: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+        }
+    </script>
+</body>
+</html>
