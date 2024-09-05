@@ -12,6 +12,7 @@ Progress Bars: Visualize attention levels dynamically with real-time updates.
 Languages: TypeScript, Python.
 
 Libraries and Frameworks: React, Vite, TailwindCSS, Numpy, Pandas, Matplotlib, Seaborn, Pickle
-Component : Shadcn/ui
+
+UI Component : Shadcn/ui
 
 
