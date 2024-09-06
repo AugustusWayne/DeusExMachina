@@ -1,5 +1,5 @@
 # EEG Attention Detection Website
-This project is a web-based platform that processes EEG data to identify levels of attention. Built with Vite, React, TypeScript, and Shadcn/UI components, the app offers a smooth, responsive UI for analyzing brainwave patterns.
+This project is a web-based platform that processes brain signals in the form of EEG (Electroencephalogram) data to identify levels of attention. Built with Vite, React, TypeScript, and Shadcn/UI components, the app offers a smooth, responsive UI for analyzing brainwave patterns.
 
 ##Features
 EEG Data Input: Upload EEG data for real-time attention detection.
